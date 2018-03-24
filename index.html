@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sweetalert-lite</title>
+  <link rel="stylesheet" type="text/css" href="node_modules/sweetalert2/dist/sweetalert2.css">
+</head>
+<body>
+<script src="./node_modules/sweetalert2/dist/sweetalert2.js"></script>
+<script src="./dist/sweetalert-lite.umd.js"></script>
+<script>
+  let swal = Swal.fire('foo', 'bar')
+    .on('opening', () => console.log('opening'))
+    .on('opened', () => console.log('opened'))
+    .on('closing', () => console.log('closing'))
+    .on('closed', () => console.log('closed'))
+    .on('end', result => console.log('end', { result }))
+    .run()
+    .then(result => console.log('promise', { result }))
+</script>
+</body>
+</html>
