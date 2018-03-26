@@ -1,2 +1,12 @@
-<h1>{{title}}</h1>
-<p>{{body}}</p>
+<!--
+  data
+    - title
+    - body
+  events
+    - click:ok
+-->
+<div style="border: 1px solid black">
+  <h1>{{title}}</h1>
+  <p>{{body}}</p>
+  <button on:click="fire('click:ok')">ok</button>
+</div>

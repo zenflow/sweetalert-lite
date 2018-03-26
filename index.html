@@ -9,14 +9,30 @@
 <script src="./node_modules/sweetalert2/dist/sweetalert2.js"></script>
 <script src="./dist/sweetalert-lite.umd.js"></script>
 <script>
+  /*
   let swal = Swal.fire('foo', 'bar')
     .on('opening', () => console.log('opening'))
     .on('opened', () => console.log('opened'))
     .on('closing', () => console.log('closing'))
     .on('closed', () => console.log('closed'))
-    .on('end', result => console.log('end', { result }))
-    .run()
-    .then(result => console.log('promise', { result }))
+    // .on('end', result => console.log('end', result))
+    .then(result => console.log('swal', result))
+    - or -
+  */
+  main().catch(console.error)
+  async function main () {
+    const swal = Swal.fire('foo', 'bar')
+    await swal.opening()
+    console.log('opening')
+    await swal.opened()
+    console.log('opened')
+    await swal.closing()
+    console.log('closing')
+    await swal.closed()
+    console.log('closed')
+    // console.log('end', await swal.end())
+    console.log('swal', await swal)
+  }
 </script>
 </body>
 </html>
